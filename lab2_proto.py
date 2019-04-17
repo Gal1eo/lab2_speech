@@ -1,5 +1,6 @@
 import numpy as np
 from lab2_tools import *
+from prondict import prondict
 
 def concatTwoHMMs(hmm1, hmm2):
     """ Concatenates 2 HMM models
@@ -33,17 +34,25 @@ def concatTwoHMMs(hmm1, hmm2):
     PI = hmm1['startprob']#1*4
     B = hmm2['transmat']
     P = hmm2['startprob']
-    a = A.shape[0]
-    b = B.shape[0]
-    A_con = np.zeros((a+b-1, a+b-1))
-    A_con[:a-1, :a-1] = A[:a-1, :a-1]
-    A_con[a-1:a+b-1, a-1:a+b-1] = B
-    A_con[:a-1, a-1:] = np.dot(A[:a-1,a-1].reshape(-1, 1), P.reshape(1, -1))
-    Pi_con = np.zeros((1, PI.shape[0]*2))
-    Pi_con[0, 0:a-1] = PI[:b-1]
-    Pi_con[0, a:] = PI[b-1] * P
+    m = A.shape[0] - 1
+    m2 = B.shape[0] - 1
+    K = m + m2
+    A_con = np.zeros((K+1, K+1))
+    Pi_con = np.zeros((1, K+1))
+    A_con[:m, :m] = A[:m, :m]
+    A_con[m:, m:] = B
+    A_con[:m, m:] = np.dot(A[:m,m].reshape(-1, 1), P.reshape(1, -1))
+    PP = PI.reshape(1, -1)
+    Pi_con[0, :m] = PP[0, :m]
+    Pi_con[0, m:] = PP[0, m] * P
 
-    return A_con, Pi_con
+    twoHMMs = {}
+    twoHMMs['startprob'] = Pi_con
+    twoHMMs['transmat'] = A_con
+    twoHMMs['means'] = np.concatenate((hmm1['means'], hmm2['means']), axis=0)
+    twoHMMs['covars'] = np.concatenate((hmm1['covars'] ,hmm2['covars']), axis=0)#K*D
+
+    return twoHMMs
 
 # this is already implemented, but based on concat2HMMs() above
 def concatHMMs(hmmmodels, namelist):
@@ -166,9 +175,21 @@ if __name__ == "__main__":
     data = np.load('lab2_data.npz')['data']
     phoneHMMs = np.load('lab2_models_onespkr.npz')['phoneHMMs'].item()
     """4"""
+    '''
     hmm1 = phoneHMMs['ah']
     hmm2 = phoneHMMs['ao']
-    P, A = concatTwoHMMs(hmm1, hmm2)
-    #print(P, A)
-    """5"""
-    
+    twohmm= concatTwoHMMs(hmm1, hmm2)
+    '''
+    """5.1"""
+    example = np.load('lab2_example.npz')['example'].item()
+    isolated = {}
+    for digit in prondict.keys():
+        isolated[digit] = ['sil'] + prondict[digit] + ['sil']
+    wordHMMs = {}
+    wordHMMs['o'] = concatHMMs(phoneHMMs, isolated['o'])
+    #print(example['lmfcc'].shape)#71*13
+    lpr = log_multivariate_normal_density_diag(example['lmfcc'], wordHMMs['o']['means'], wordHMMs['o']['covars'])
+    diff = example['obsloglik'] - lpr
+    print(np.sum(np.sum(diff)))
+
+    """5.2"""
