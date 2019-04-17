@@ -29,6 +29,19 @@ def concatTwoHMMs(hmm1, hmm2):
 
     See also: the concatenating_hmms.pdf document in the lab package
     """
+    A = hmm1['transmat']#4*4
+    PI = hmm1['startprob']#1*4
+    B = hmm2['transmat']
+    P = hmm2['startprob']
+    A_con = np.zeros((7, 7))
+    A_con[:3, :3] = A[:3, :3]
+    A_con[3:7, 3:7] = B
+    A_con[:3, 3:] = np.dot(A[:3,3].reshape(-1, 1), P.reshape(1, -1))
+    Pi_con = np.zeros((1, PI.shape[0]*2))
+    Pi_con[0, 0:3] = PI[:3]
+    Pi_con[0, 4:] = PI[3] * P
+
+    return A_con, Pi_con
 
 # this is already implemented, but based on concat2HMMs() above
 def concatHMMs(hmmmodels, namelist):
@@ -146,3 +159,11 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
          means: MxD mean vectors for each state
          covars: MxD covariance (variance) vectors for each state
     """
+
+if __name__ == "__main__":
+    #data = np.load('lab2_data.npz')['data']
+    phoneHMMs = np.load('lab2_models_onespkr.npz')['phoneHMMs'].item()
+    hmm1 = phoneHMMs['ah']
+    hmm2 = phoneHMMs['ao']
+    P, A = concatTwoHMMs(hmm1, hmm2)
+    print(P, A)
