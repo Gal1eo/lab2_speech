@@ -161,9 +161,12 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
     """
 
 if __name__ == "__main__":
-    #data = np.load('lab2_data.npz')['data']
+    data = np.load('lab2_data.npz')['data']
     phoneHMMs = np.load('lab2_models_onespkr.npz')['phoneHMMs'].item()
+    """4"""
     hmm1 = phoneHMMs['ah']
     hmm2 = phoneHMMs['ao']
     P, A = concatTwoHMMs(hmm1, hmm2)
-    print(P, A)
+    #print(P, A)
+    """5"""
+    
