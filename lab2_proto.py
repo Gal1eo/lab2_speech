@@ -33,13 +33,15 @@ def concatTwoHMMs(hmm1, hmm2):
     PI = hmm1['startprob']#1*4
     B = hmm2['transmat']
     P = hmm2['startprob']
-    A_con = np.zeros((7, 7))
-    A_con[:3, :3] = A[:3, :3]
-    A_con[3:7, 3:7] = B
-    A_con[:3, 3:] = np.dot(A[:3,3].reshape(-1, 1), P.reshape(1, -1))
+    a = A.shape[0]
+    b = B.shape[0]
+    A_con = np.zeros((a+b-1, a+b-1))
+    A_con[:a-1, :a-1] = A[:a-1, :a-1]
+    A_con[a-1:a+b-1, a-1:a+b-1] = B
+    A_con[:a-1, a-1:] = np.dot(A[:a-1,a-1].reshape(-1, 1), P.reshape(1, -1))
     Pi_con = np.zeros((1, PI.shape[0]*2))
-    Pi_con[0, 0:3] = PI[:3]
-    Pi_con[0, 4:] = PI[3] * P
+    Pi_con[0, 0:a-1] = PI[:b-1]
+    Pi_con[0, a:] = PI[b-1] * P
 
     return A_con, Pi_con
 
