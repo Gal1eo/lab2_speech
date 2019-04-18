@@ -121,7 +121,7 @@ def forward(log_emlik, log_startprob, log_transmat):
     forward_prob = np.zeros((N,M))
     for i in range(N):
         if i == 0:
-            forward_prob[0, :] = log_startprob[0, :] + log_emlik[0, :]
+            forward_prob[0, :] = log_startprob[0, :M] + log_emlik[0, :M]
         else:
             for j in range(M):
                 forward_prob[i, j] = logsumexp(forward_prob[i-1] + log_transmat[:M, j]) + log_emlik[i, j]
@@ -174,7 +174,7 @@ def viterbi(log_emlik, log_startprob, log_transmat, forceFinalState=True):
             for i in range(M):
                 viterbi_loglik[n, i] = np.max(viterbi_loglik[n - 1, :M] + log_transmat[:M, i]) + log_emlik[n, i]
 
-    viterbi_path = np.argmax(viterbi_loglik, axis=0)
+    viterbi_path = np.argmax(viterbi_loglik, axis=1)
     print(viterbi_path.shape)
 
     return viterbi_loglik, viterbi_path
@@ -191,6 +191,14 @@ def statePosteriors(log_alpha, log_beta):
     Output:
         log_gamma: NxM array of gamma probabilities for each of the M states in the model
     """
+    N = log_alpha.shape[0]
+    M = log_alpha.shape[1]
+    log_gamma = np.zeros((N, M))
+    for n in range(N):
+        log_gamma[n, :] = log_alpha[n, :] + log_beta[n, :] - logsumexp(log_alpha[N-1, :])
+        #print(np.sum(np.exp(log_gamma[n, :])))
+    return log_gamma
+
 
 def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
     """ Update Gaussian parameters with diagonal covariance
@@ -207,6 +215,17 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
          means: MxD mean vectors for each state
          covars: MxD covariance (variance) vectors for each state
     """
+    N = X.shape[0]#71*13
+    D = X.shape[1]
+    M = log_gamma[1]
+
+    means = np.mean(X, axis= 0)
+    covars = np.cov(X.T)
+    print(X.shape, means.shape, covars.shape)
+
+
+    return means, covars
+
 
 if __name__ == "__main__":
     data = np.load('lab2_data.npz')['data']
@@ -217,6 +236,7 @@ if __name__ == "__main__":
     hmm2 = phoneHMMs['ao']
     twohmm= concatTwoHMMs(hmm1, hmm2)
     '''
+    """5 HMM Likelihood and Recognition"""
     """5.1"""
     example = np.load('lab2_example.npz')['example'].item()
     isolated = {}
@@ -230,20 +250,26 @@ if __name__ == "__main__":
     #plt.pcolormesh(lpr.T)
     #plt.show()
     """5.2"""
-    forw = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
-    #plt.pcolormesh(forw.T)
+    lalpha = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
+    #plt.pcolormesh(lalpha.T)
     #plt.show()
-    diff1 = example['logalpha'] - forw #0
+    diff1 = example['logalpha'] - lalpha #0
     """5.4"""
-    back = backward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
-    #plt.pcolormesh(back.T)
+    lbeta = backward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
+    #plt.pcolormesh(lbeta.T)
     #plt.show()
-    diff2 = example['logbeta'] - back
+    diff2 = example['logbeta'] - lbeta
     #print(diff2)
     """5.3"""
     viterbi, viterbi_path = viterbi(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
     #plt.pcolormesh(viterbi.T)
-    #plt.plot(viterbi_path)
+    #plt.plot(viterbi_path,'r')
     #plt.show()
     difff = example['vloglik'] - viterbi.T#0
+    """6 HMM Retraining(emissino probability distributions)"""
     """6.1"""
+    lgamma = statePosteriors(lalpha, lbeta)
+    #print(np.sum(lgamma, axis=1))
+    """6.2"""
+    #wordHMMs['4'] =
+    means, covars = updateMeanAndVar(example['lmfcc'], lgamma)
