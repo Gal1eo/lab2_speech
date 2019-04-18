@@ -119,9 +119,6 @@ def forward(log_emlik, log_startprob, log_transmat):
     N = log_emlik.shape[0]
     M = log_emlik.shape[1]
     forward_prob = np.zeros((N,M))
-    print(log_emlik.shape)
-    print(log_startprob.shape)
-    print(log_transmat.shape)
     for i in range(N):
         for j in range(M):
             if i == 0:
@@ -145,15 +142,10 @@ def backward(log_emlik, log_startprob, log_transmat):
     N = log_emlik.shape[0]
     M = log_emlik.shape[1]
     backward_prob = np.zeros((N, M))
-    print(log_emlik.shape)
-    print(log_startprob.shape)
-    print(log_transmat.shape)
-    for n in reversed(range(N)):
-        for i in reversed(range(M)):
-            if n == N-1:
-                backward_prob[n:, i] = 0
-            else:
-                backward_prob[n:, i] = logsumexp(backward_prob[i - 1] + log_transmat[0:M, j]) + log_emlik[i:, j]
+    for n in reversed(range(0,N-1)):
+        print(n)
+        for i in range(M):
+             backward_prob[n, i] = logsumexp(backward_prob[n + 1,:M] + log_transmat[i,:M] + log_emlik[n + 1,:M])
 
     return backward_prob
 def viterbi(log_emlik, log_startprob, log_transmat, forceFinalState=True):
@@ -223,5 +215,9 @@ if __name__ == "__main__":
     #plt.show()
     """5.2"""
     forw = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
-    plt.pcolormesh(forw.T)
+    #plt.pcolormesh(forw.T)
+    #plt.show()
+    """5.4"""
+    back = backward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
+    plt.pcolormesh(back.T)
     plt.show()
