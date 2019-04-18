@@ -217,6 +217,7 @@ if __name__ == "__main__":
     forw = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
     #plt.pcolormesh(forw.T)
     #plt.show()
+    """5.4"""
     back = backward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
     plt.pcolormesh(back.T)
     plt.show()

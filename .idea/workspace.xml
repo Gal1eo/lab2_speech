@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088384e3-4106-4642-b742-3b51b1c9bd42" name="Default Changelist" comment="" />
+    <list default="true" id="088384e3-4106-4642-b742-3b51b1c9bd42" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2_proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2_proto.py" afterDir="false" />
+    </list>
     <ignored path="C:\Users\jules\Desktop\DT2119\lab2_speech\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lab2_proto.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="145" column="16" lean-forward="true" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+            <state relative-caret-position="226">
+              <caret line="219" column="10" selection-start-line="219" selection-start-column="10" selection-end-line="219" selection-end-column="10" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -149,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555506000293</updated>
       <workItem from="1555506001894" duration="5051000" />
-      <workItem from="1555579172236" duration="11247000" />
+      <workItem from="1555579172236" duration="11493000" />
     </task>
     <task id="LOCAL-00001" summary="Task 5.1.1 complete">
       <created>1555580461988</created>
@@ -179,11 +182,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555600226622</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Task 5.4 complete">
+      <created>1555600381805</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555600381806</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16298000" />
+    <option name="totallyTimeSpent" value="16544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
@@ -246,7 +256,8 @@
     <MESSAGE value="Task 5.2.1 uncomplete" />
     <MESSAGE value="Task 5.2.1 forward complete" />
     <MESSAGE value="Task 5.2 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task 5.2 complete" />
+    <MESSAGE value="Task 5.4 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 5.4 complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -283,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lab2_proto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="145" column="16" lean-forward="true" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+        <state relative-caret-position="226">
+          <caret line="219" column="10" selection-start-line="219" selection-start-column="10" selection-end-line="219" selection-end-column="10" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
