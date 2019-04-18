@@ -120,13 +120,14 @@ def forward(log_emlik, log_startprob, log_transmat):
     M = log_emlik.shape[1]
     forward_prob = np.zeros((N,M))
     for i in range(N):
-        for j in range(M):
-            if i == 0:
-                forward_prob[i:, j] = log_startprob[0:,j] + log_emlik[0:,j]
-            else:
-                forward_prob[i:,j] = logsumexp(forward_prob[i-1]+log_transmat[0:M,j])+log_emlik[i:,j]
+        if i == 0:
+            forward_prob[0, :] = log_startprob[0, :] + log_emlik[0, :]
+        else:
+            for j in range(M):
+                forward_prob[i, j] = logsumexp(forward_prob[i-1] + log_transmat[:M, j]) + log_emlik[i, j]
 
     return forward_prob
+
 
 def backward(log_emlik, log_startprob, log_transmat):
     """Backward (beta) probabilities in log domain.
@@ -142,12 +143,13 @@ def backward(log_emlik, log_startprob, log_transmat):
     N = log_emlik.shape[0]
     M = log_emlik.shape[1]
     backward_prob = np.zeros((N, M))
-    for n in reversed(range(0,N-1)):
-        print(n)
+    for n in reversed(range(N-1)):
         for i in range(M):
-             backward_prob[n, i] = logsumexp(backward_prob[n + 1,:M] + log_transmat[i,:M] + log_emlik[n + 1,:M])
+             backward_prob[n, i] = logsumexp(backward_prob[n + 1, :M] + log_transmat[i, :M] + log_emlik[n + 1, :M])
 
     return backward_prob
+
+
 def viterbi(log_emlik, log_startprob, log_transmat, forceFinalState=True):
     """Viterbi path.
 
@@ -162,6 +164,21 @@ def viterbi(log_emlik, log_startprob, log_transmat, forceFinalState=True):
         viterbi_loglik: log likelihood of the best path
         viterbi_path: best path
     """
+    N = log_emlik.shape[0]
+    M = log_emlik.shape[1]
+    viterbi_loglik = np.zeros((N, M))
+    for n in range(N):
+        if n == 0:
+            viterbi_loglik[n] = log_startprob[0, :M] + log_emlik[0, :M]
+        else:
+            for i in range(M):
+                viterbi_loglik[n, i] = np.max(viterbi_loglik[n - 1, :M] + log_transmat[:M, i]) + log_emlik[n, i]
+
+    viterbi_path = np.argmax(viterbi_loglik, axis=0)
+    print(viterbi_path.shape)
+
+    return viterbi_loglik, viterbi_path
+
 
 def statePosteriors(log_alpha, log_beta):
     """State posterior (gamma) probabilities in log domain.
@@ -209,15 +226,24 @@ if __name__ == "__main__":
     wordHMMs['o'] = concatHMMs(phoneHMMs, isolated['o'])
     #print(example['lmfcc'].shape)#71*13
     lpr = log_multivariate_normal_density_diag(example['lmfcc'], wordHMMs['o']['means'], wordHMMs['o']['covars'])
-    diff = example['obsloglik'] - lpr
-    print(np.sum(np.sum(diff)))
+    diff = example['obsloglik'] - lpr #0
     #plt.pcolormesh(lpr.T)
     #plt.show()
     """5.2"""
     forw = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
     #plt.pcolormesh(forw.T)
     #plt.show()
+    diff1 = example['logalpha'] - forw #0
     """5.4"""
     back = backward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
-    plt.pcolormesh(back.T)
-    plt.show()
+    #plt.pcolormesh(back.T)
+    #plt.show()
+    diff2 = example['logbeta'] - back
+    #print(diff2)
+    """5.3"""
+    viterbi, viterbi_path = viterbi(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
+    #plt.pcolormesh(viterbi.T)
+    #plt.plot(viterbi_path)
+    #plt.show()
+    difff = example['vloglik'] - viterbi.T#0
+    """6.1"""
