@@ -13,15 +13,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/lab2_speech$lab2_proto.coverage" NAME="lab2_proto Coverage Results" MODIFIED="1555594842711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/lab2_speech$lab2_proto.coverage" NAME="lab2_proto Coverage Results" MODIFIED="1555599152728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lab2_proto.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="210" column="14" lean-forward="true" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
+            <state relative-caret-position="226">
+              <caret line="148" column="30" lean-forward="true" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lab2_tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="66" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="4" selection-end-column="66" />
+            <state relative-caret-position="57">
+              <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -152,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555506000293</updated>
       <workItem from="1555506001894" duration="5051000" />
-      <workItem from="1555579172236" duration="5895000" />
+      <workItem from="1555579172236" duration="10177000" />
     </task>
     <task id="LOCAL-00001" summary="Task 5.1.1 complete">
       <created>1555580461988</created>
@@ -161,12 +161,12 @@
       <option name="project" value="LOCAL" />
       <updated>1555580461988</updated>
     </task>
-    <task id="LOCAL-00002" summary="5.1">
-      <created>1555511544365</created>
+    <task id="LOCAL-00002" summary="Task 5.2.1 uncomplete">
+      <created>1555595065199</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1555511544365</updated>
+      <updated>1555595065199</updated>
     </task>
     <task id="LOCAL-00003" summary="5.1.1">
       <created>1555511615532</created>
@@ -175,11 +175,11 @@
       <option name="project" value="LOCAL" />
       <updated>1555511615532</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10946000" />
+    <option name="totallyTimeSpent" value="15228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="0" />
@@ -239,7 +239,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Task 5.1.1 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task 5.1.1 complete" />
+    <MESSAGE value="Task 5.2.1 uncomplete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 5.2.1 uncomplete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -269,15 +270,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lab2_tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="66" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="4" selection-end-column="66" />
+        <state relative-caret-position="57">
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lab2_proto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="210" column="14" lean-forward="true" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
+        <state relative-caret-position="226">
+          <caret line="148" column="30" lean-forward="true" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

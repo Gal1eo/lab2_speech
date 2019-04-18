@@ -122,12 +122,15 @@ def forward(log_emlik, log_startprob, log_transmat):
     print(log_emlik.shape)
     print(log_startprob.shape)
     print(log_transmat.shape)
-    for j in range(M):
-        forward_prob[0:,j] = log_startprob[0:,j] + log_emlik[0:,j]
-    for i in range(1,N):
+    for i in range(N):
         for j in range(M):
-            forward_prob[i:,j] = logsumexp(forward_prob[i-1,0:M]+log_transmat[0:M,j].T)+log_emlik[i:,j]
+            if i == 0:
+                forward_prob[i:, j] = log_startprob[0:,j] + log_emlik[0:,j]
+            else:
+                forward_prob[i:,j] = logsumexp(forward_prob[i-1]+log_transmat[0:M,j])+log_emlik[i:,j]
+
     return forward_prob
+
 def backward(log_emlik, log_startprob, log_transmat):
     """Backward (beta) probabilities in log domain.
 
@@ -139,7 +142,20 @@ def backward(log_emlik, log_startprob, log_transmat):
     Output:
         backward_prob: NxM array of backward log probabilities for each of the M states in the model
     """
+    N = log_emlik.shape[0]
+    M = log_emlik.shape[1]
+    backward_prob = np.zeros((N, M))
+    print(log_emlik.shape)
+    print(log_startprob.shape)
+    print(log_transmat.shape)
+    for n in reversed(range(N)):
+        for i in reversed(range(M)):
+            if n == N-1:
+                backward_prob[n:, i] = 0
+            else:
+                backward_prob[n:, i] = logsumexp(backward_prob[i - 1] + log_transmat[0:M, j]) + log_emlik[i:, j]
 
+    return backward_prob
 def viterbi(log_emlik, log_startprob, log_transmat, forceFinalState=True):
     """Viterbi path.
 
@@ -206,6 +222,6 @@ if __name__ == "__main__":
     #plt.pcolormesh(lpr.T)
     #plt.show()
     """5.2"""
-    forw = forward(lpr, wordHMMs['o']['startprob'], wordHMMs['o']['transmat'])
+    forw = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
     plt.pcolormesh(forw.T)
     plt.show()
