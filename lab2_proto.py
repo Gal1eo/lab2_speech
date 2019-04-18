@@ -1,6 +1,7 @@
 import numpy as np
 from lab2_tools import *
 from prondict import prondict
+import matplotlib.pyplot as plt
 
 def concatTwoHMMs(hmm1, hmm2):
     """ Concatenates 2 HMM models
@@ -191,5 +192,6 @@ if __name__ == "__main__":
     lpr = log_multivariate_normal_density_diag(example['lmfcc'], wordHMMs['o']['means'], wordHMMs['o']['covars'])
     diff = example['obsloglik'] - lpr
     print(np.sum(np.sum(diff)))
-
+    plt.pcolormesh(lpr.T)
+    plt.show()
     """5.2"""
