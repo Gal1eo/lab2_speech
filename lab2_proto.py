@@ -116,7 +116,18 @@ def forward(log_emlik, log_startprob, log_transmat):
     Output:
         forward_prob: NxM array of forward log probabilities for each of the M states in the model
     """
-
+    N = log_emlik.shape[0]
+    M = log_emlik.shape[1]
+    forward_prob = np.zeros((N,M))
+    print(log_emlik.shape)
+    print(log_startprob.shape)
+    print(log_transmat.shape)
+    for j in range(M):
+        forward_prob[0:,j] = log_startprob[0:,j] + log_emlik[0:,j]
+    for i in range(1,N):
+        for j in range(M):
+            forward_prob[i:,j] = logsumexp(forward_prob[i-1,0:M]+log_transmat[0:M,j].T)+log_emlik[i:,j]
+    return forward_prob
 def backward(log_emlik, log_startprob, log_transmat):
     """Backward (beta) probabilities in log domain.
 
@@ -192,6 +203,9 @@ if __name__ == "__main__":
     lpr = log_multivariate_normal_density_diag(example['lmfcc'], wordHMMs['o']['means'], wordHMMs['o']['covars'])
     diff = example['obsloglik'] - lpr
     print(np.sum(np.sum(diff)))
-    plt.pcolormesh(lpr.T)
-    plt.show()
+    #plt.pcolormesh(lpr.T)
+    #plt.show()
     """5.2"""
+    forw = forward(lpr, wordHMMs['o']['startprob'], wordHMMs['o']['transmat'])
+    plt.pcolormesh(forw.T)
+    plt.show()
