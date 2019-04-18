@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="088384e3-4106-4642-b742-3b51b1c9bd42" name="Default Changelist" comment="5 complete">
+    <list default="true" id="088384e3-4106-4642-b742-3b51b1c9bd42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2_proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2_proto.py" afterDir="false" />
     </list>
@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lab2_proto.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="221" column="31" lean-forward="true" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
+            <state relative-caret-position="354">
+              <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -196,11 +196,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555602851299</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="6.1 complete">
+      <created>1555607576686</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555607576686</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22768000" />
+    <option name="totallyTimeSpent" value="27152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="653" height="687" extended-state="0" />
@@ -211,7 +218,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3783784" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3099099" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -279,7 +286,8 @@
     <MESSAGE value="Task 5.2 complete" />
     <MESSAGE value="Task 5.4 complete" />
     <MESSAGE value="5 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="5 complete" />
+    <MESSAGE value="6.1 complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="6.1 complete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -316,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lab2_proto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="221" column="31" lean-forward="true" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
+        <state relative-caret-position="354">
+          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

@@ -218,10 +218,16 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
     N = X.shape[0]#71*13
     D = X.shape[1]
     M = log_gamma[1]
-
-    means = np.mean(X, axis= 0)
-    covars = np.cov(X.T)
-    print(X.shape, means.shape, covars.shape)
+    means = np.zeros((M, D))
+    covars = np.zeros((M, D))
+    #means = np.mean(X, axis=0)
+    #covars = np.cov(X.T)
+    for k in range(M):
+        for n in range(N):
+            means[k, :] += np.exp(log_gamma[n, k]) * X[n,:]
+        means[k, :] /= np.sum(np.exp(log_gamma[:, k]))
+    for j in range(M):
+        for n in range(N):
 
 
     return means, covars
