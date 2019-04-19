@@ -104,7 +104,8 @@ def gmmloglik(log_emlik, weights):
     Output:
         gmmloglik: scalar, log likelihood of data given the GMM model.
     """
-
+    gmm_loglik = 0
+    return gmm_loglik
 def forward(log_emlik, log_startprob, log_transmat):
     """Forward (alpha) probabilities in log domain.
 
@@ -226,7 +227,7 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
         for n in range(N):
             means[k, :] += np.exp(log_gamma[n, k]) * X[n,:]
         means[k, :] /= np.sum(np.exp(log_gamma[:, k]))
-    for j in range(M):
+    for k in range(M):
         for n in range(N):
             covars[k, :] += np.exp(log_gamma[n, k]) * (X[n, :] - means[k, :])**2
         covars[k, :] /= np.sum(np.exp(log_gamma[:, k]))
@@ -237,7 +238,7 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
 
 if __name__ == "__main__":
     data = np.load('lab2_data.npz')['data']
-    phoneHMMs = np.load('lab2_models_onespkr.npz')['phoneHMMs'].item()
+    phoneHMMs = np.load('lab2_models_all.npz')['phoneHMMs'].item()
     """4"""
     '''
     hmm1 = phoneHMMs['ah']
@@ -251,12 +252,18 @@ if __name__ == "__main__":
     for digit in prondict.keys():
         isolated[digit] = ['sil'] + prondict[digit] + ['sil']
     wordHMMs = {}
-    wordHMMs['o'] = concatHMMs(phoneHMMs, isolated['o'])
+    for digit in prondict.keys():
+        wordHMMs[digit] = concatHMMs(phoneHMMs, isolated[digit])
+
+    print(wordHMMs['z'])
     #print(example['lmfcc'].shape)#71*13
     lpr = log_multivariate_normal_density_diag(example['lmfcc'], wordHMMs['o']['means'], wordHMMs['o']['covars'])
+    #same digit 'o'
+    lpr_O = log_multivariate_normal_density_diag(data[22]['lmfcc'], wordHMMs['o']['means'], wordHMMs['o']['covars'])
     diff = example['obsloglik'] - lpr #0
-    #plt.pcolormesh(lpr.T)
-    #plt.show()
+    #print(diff)
+    plt.pcolormesh(lpr.T)
+    plt.show()
     """5.2"""
     lalpha = forward(lpr, np.log(wordHMMs['o']['startprob']), np.log(wordHMMs['o']['transmat']))
     #plt.pcolormesh(lalpha.T)
@@ -273,7 +280,9 @@ if __name__ == "__main__":
     #plt.pcolormesh(viterbi.T)
     #plt.plot(viterbi_path,'r')
     #plt.show()
-    difff = example['vloglik'] - viterbi.T#0
+    difff = example['vloglik'] - viterbi.T  # 0
+    # Score all 44 utterances in the data with each of the 11 HMM models in wordHMMs
+
     """6 HMM Retraining(emissino probability distributions)"""
     """6.1"""
     lgamma = statePosteriors(lalpha, lbeta)
@@ -281,5 +290,5 @@ if __name__ == "__main__":
     """6.2"""
     #wordHMMs['4'] =
     means, covars = updateMeanAndVar(example['lmfcc'], lgamma)
-    print('means', means)
-    print('covars', covars)
+    #print('means', means)
+    #print('covars', covars)
