@@ -10,3 +10,12 @@ The overall task is to implement and test methods for isolated word recognition:
 • compare and comment Viterbi and Forward likelihoods\
 • implement the Baum-Welch algorithm to update the parameters of the emission probability
 distributions
+# Dependencies
+• Numpy 1.16.0\
+• mat loitlib 2.2.3\
+The two dependencies can be installed using pip by running
+```
+pip install -r requirements.txt
+```
+# Run
+python main.py
