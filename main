@@ -164,7 +164,7 @@ def main():
     means = wordHMMs_all['4']['means']
     covars = wordHMMs_all['4']['covars']
     # repitation:
-    for i in range(3):
+    for i in range(20):
         lpr = log_multivariate_normal_density_diag(data[10]['lmfcc'],
                                                    means, covars)
         # Expectation
@@ -175,7 +175,7 @@ def main():
         means, covars = updateMeanAndVar(data[10]['lmfcc'], log_gamma)
         # Estimate likelihood
         log_like = logsumexp(lalpha[-1])
-        print(covars)
+        #print(covars)
         print(log_like)
     #rint('means', means)
     #print('covars', covars)
