@@ -18,3 +18,4 @@ The two dependencies can be installed using pip by running
 pip install -r requirements.txt
 ```
 # Run
+python main.py
