@@ -20,8 +20,7 @@
 	%\title{}
 	
 	\title
-	{%
-	  DT2119 Speech and Speaker Recognition Lab 1
+	{DT2119 Speech and Speaker Recognition Lab 2
 	}
 	
 	%\author{}
@@ -30,12 +29,6 @@
 	{
 	Zijian Fan, Lingxi Xiong
 	}
-	
-	%\author[Dude, Friends]
-	%{
-	%The~Dude\inst{1} \and
-	%And~Friends\inst{2}
-	%}
 	
 	\institute{}
 	
@@ -46,7 +39,7 @@
 	%}
 	
 	\date{}
-	%\date{\today}
+	\date{\today}
 	
 	
 	\begin{document}
@@ -56,45 +49,56 @@
 \end{frame}
 	
 \begin{frame}
-	\frametitle{MFCC -- Enframe}
+	\frametitle{5.1 Gaussian emission probabilities}
 	\begin{figure}
 \centering
-		\includegraphics[width=0.48\textwidth]{figures/01.png}
-		\includegraphics[width=0.48\textwidth]{figures/02.png}
+		\includegraphics[width=0.65\textwidth]{figures/51.png}
 	\end{figure}
 			
 	\begin{itemize}
-		\item window length = 400(200ms); window shift = 200(100ms)--50\% overlap
-		\item increase the resolution and decrease the variance
+		\item  isolated['o'] = ['sil'] + prondict['o'] + ['sil']
 	\end{itemize}
 \end{frame}
 	
 \begin{frame}
-	\frametitle{MFCC -- Pre-emphasis}
-	\begin{figure}
-		\includegraphics[width=0.6\textwidth]{figures/03.png}
-	\end{figure}
-			  
+	\frametitle{5.2 Forward Algorithm}
 	\begin{itemize}
-		\item high-pass filter to filter out the low frequency component
-		\item $H_{pre}\left( z \right) =1-0.97z^{-1}$
+		\item Maximum likelihood accuracy
+		
+trained on all speakers: 43/44
+
+trained on one speaker: 34/44\\
+
+
+		\item Viterbi algorithm accuracy
+
+trained on all speakers: 44/44
+
+trained on one speaker: 34/44 (same mistakes as ML)
+
+
+\item Computational complexity
+
+Viterbi scoring: \mathcal{O}(n)
+
+Forward scoring: \mathcal{O}(n^2)
+
 	\end{itemize}
 \end{frame}
 	
+
 \begin{frame}
-	\frametitle{MFCC -- Hamming Window}
+	\frametitle{5.3 Viterbi Approximation}
 	\begin{figure}
 \centering
-		\includegraphics[width=0.48\textwidth]{figures/03_1.png}
-		\includegraphics[width=0.48\textwidth]{figures/04.png}
+		\includegraphics[width=0.55\textwidth]{figures/53.png}
 	\end{figure}
 
 	\begin{itemize}
-		\item $h\left[ n \right] =h_I\left[ n \right] \times w\left[ n \right] $
-		\item Resolution: $\Delta \upsilon =\text{1.30/}N$
-\\
-		\item Variance: $Var\{ \widehat{P_{x}^{W}}(v) \} =\frac{9}{8K}P_{x}^2(v) = \frac{9}{8K}Var \{ \widehat{P_x}\left( v \right)\} $
-%$Var \left\{ \widehat{P_x}\left( v \right) \right\} = P_{x}^2 (v)$
+		\item $\alpha_n(j) = P(x_0, ..., x_n, z_n =s_j \mid \theta)$
+		\item $log V_n(j) = max^{M-1}_{i=0}(log V_{n-1}(i) + log a_{ij}) + log \phi_j(x_n)$
+		\item $B_n(j) = argmax_{i=0}^{M-1}(log V_{n-1}(i) + log a_{ij})$
+		
 
 	\end{itemize}
 
@@ -102,105 +106,54 @@
 \end{frame}
 	
 \begin{frame}
-	\frametitle{MFCC -- Fast Fourier Transform}
+	\frametitle{5.4 Backward Algorithm}
 	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{figures/05.png}
+		\includegraphics[width=0.6\textwidth]{figures/54.png}
 	\end{figure}
+ 
 \begin{itemize}
-\item $f_{max}$ = 10000Hz
+\item $\beta_n(i) = P(x_{n+1}, ..., x_{N-1} \mid z_n = s_i, \theta)$
 \end{itemize}
 
 \end{frame}
 	
 \begin{frame}
-	\frametitle{MFCC -- Mel filterbank log spectrum}
-	\begin{figure}
-		\includegraphics[width=0.48\textwidth]{figures/06.png}
-		\includegraphics[width=0.48\textwidth]{figures/07.png}
-	\end{figure}
-
+	\frametitle{6.1 State posterior(Gamma) probabilities}
 	\begin{itemize}
-		\item Mel filterbank: filters concentrated in the low frequency area
-		%\item discrete signal $\rightarrow$ continuous signal
+		\item HMM posteriors: $\gamma_n(i) = P(z_n = s_i \mid X, \theta)$
+		
+		For each time step the state posteriors sum to 1 (in linear domain).\\
+
+		Summing along the time axis: 1.35, 2.10, 3.56, 9.74, 10.12, 20.53, 13.00, 1.21, 9.40\\
+		
+		Summing over both states and time steps = length of the observation(71)
+
 	\end{itemize}
 
 \end{frame}
 	
 \begin{frame}
-	\frametitle{MFCC -- Cosine Transform and Liftering}
-	\begin{figure}
-\centering
-		\includegraphics[width=0.48\textwidth]{figures/08.png}
-		\includegraphics[width=0.48\textwidth]{figures/09.png}
-	\end{figure}
-		  
-	\begin{itemize}
-		\item Cosine transform: continous $\rightarrow$ discrete signal
-		\item Lifter: correct the range of the coefficients
-		\item the MFCCs are similar if from same digits by same speaker, otherwise they vary a lot
-	\end{itemize}
-
-\end{frame}
-	
-\begin{frame}
-	\frametitle{Feature Correlation}
+\frametitle{6.1 State posterior(Gamma) probabilities}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.5\textwidth]{figures/10.png}
-		\includegraphics[width=0.49\textwidth]{figures/11.png}
+		\includegraphics[width=0.65\textwidth]{figures/61.png}
 	\end{figure}
-		  
 	\begin{itemize}
-		\item MFCC: uncorrelated features $\rightarrow$ diagonal covariance matrices $\rightarrow$ Gaussian modelling
-		\item Mspec: features are much more correlated
+		\item HMM posteriors: $\gamma_n(i) = P(z_n = s_i \mid X, \theta)$
+		\item GMM posteriors: $\gamma_n^{GMM}(i) = P(z_n = s_i \mid x_n, \phi)$
 	\end{itemize}
-\end{frame}
-	
-\begin{frame}
-	\frametitle{Explore Speech Segments with Clustering}
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.5\textwidth]{figures/12.png}
-		\includegraphics[width=0.49\textwidth]{figures/13.png}
-		\caption{GMM posteriors of utterances containing same words}
-	\end{figure}
-\begin{itemize}
-\item the discovered classes increase with number of components increase
 
-\end{itemize}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Explore Speech Segments with Clustering}
+	\frametitle{6.2 Retraining the emission probabilities distributions}
 	\begin{figure}
 \centering
-		\includegraphics[width=0.5\textwidth]{figures/14.png}
-		\includegraphics[width=0.49\textwidth]{figures/15.png}
+		\includegraphics[width=0.48\textwidth]{figures/621.png}
+		\includegraphics[width=0.48\textwidth]{figures/622.png}
 	\end{figure}
-	\begin{itemize}
-		\item The classes does not correspond to the phonemes composing each word
-		\item Unstable: classes that represent the utterances(word) vary among speakers
-	\end{itemize}
-\end{frame}
 
-
-\begin{frame}
-	\frametitle{Comparing Utterances -- Global distance}
-	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{figures/16.png}
-		\includegraphics[width=0.29\textwidth]{figures/17.png}
-	\end{figure}
-	\begin{itemize}
-		\item The distance separates digits well even between different speakers
-	\end{itemize}
-
-\end{frame}
-\begin{frame}
-	\frametitle{Comparing Utterances -- hierarchy clustering}
-	\begin{figure}
-		\includegraphics[width=0.99\textwidth]{figures/18.png}
-	\end{figure}
 \end{frame}
 
 \begin{frame}

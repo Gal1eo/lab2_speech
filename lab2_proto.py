@@ -235,7 +235,8 @@ def updateMeanAndVar(X, log_gamma, varianceFloor=5.0):
         for n in range(N):
             covars[k, :] += np.exp(log_gamma[n, k]) * (X[n, :] - means[k, :])**2
         covars[k, :] /= np.sum(np.exp(log_gamma[:, k]))
-    covars = np.maximum(covars,varianceFloor)
+    covars = np.maximum(covars, varianceFloor)
+
     return means, covars
 
 
