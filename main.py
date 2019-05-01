@@ -201,7 +201,7 @@ def maintask(task):
                 means, covars = updateMeanAndVar(data[10]['lmfcc'], log_gamma)
                 # Estimate likelihood
                 log_like = logsumexp(lalpha[-1])
-                if i > 2 and log_like - l[-1] < 1:
+                if i > 2 and log_like - l[-1] < 0.1:
                     l.append(log_like)
                     L[d] = l
                     break
