@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.9.13)  1 MAY 2019 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.9.13)  2 MAY 2019 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1171,7 +1171,13 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [2
 
  <./figures/51.png (PNG copy)> <./KTHplatta_CMYK-eps-converted-to.pdf>]
-Overfull \vbox (29.2794pt too high) detected at line 87
+<figures/52.png, id=42, 437.635pt x 93.34875pt>
+File: figures/52.png Graphic file (type png)
+<use figures/52.png>
+Package pdftex.def Info: figures/52.png  used on input line 91.
+(pdftex.def)             Requested size: 227.71507pt x 48.57295pt.
+
+Overfull \vbox (86.15724pt too high) detected at line 91
  []
 
 Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
@@ -1182,12 +1188,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 87.
+(epstopdf)             \includegraphics on input line 91.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 87.
+ 91.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1197,12 +1203,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 87.
+(epstopdf)             \includegraphics on input line 91.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 87.
+e 91.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1211,14 +1217,14 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 
 [3
 
-]
-<figures/53.png, id=50, 642.4pt x 481.8pt>
+ <./figures/52.png>]
+<figures/53.png, id=53, 642.4pt x 481.8pt>
 File: figures/53.png Graphic file (type png)
 <use figures/53.png>
-Package pdftex.def Info: figures/53.png  used on input line 106.
+Package pdftex.def Info: figures/53.png  used on input line 110.
 (pdftex.def)             Requested size: 156.55438pt x 117.41345pt.
 
-Overfull \vbox (82.06592pt too high) detected at line 106
+Overfull \vbox (82.06592pt too high) detected at line 110
  []
 
 Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
@@ -1229,12 +1235,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 106.
+(epstopdf)             \includegraphics on input line 110.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 106.
+ 110.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1244,12 +1250,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 106.
+(epstopdf)             \includegraphics on input line 110.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 106.
+e 110.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1259,13 +1265,13 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [4
 
  <./figures/53.png (PNG copy)>]
-<figures/54.png, id=59, 642.4pt x 481.8pt>
+<figures/54.png, id=62, 642.4pt x 481.8pt>
 File: figures/54.png Graphic file (type png)
 <use figures/54.png>
-Package pdftex.def Info: figures/54.png  used on input line 118.
+Package pdftex.def Info: figures/54.png  used on input line 122.
 (pdftex.def)             Requested size: 170.78738pt x 128.08807pt.
 
-Overfull \vbox (61.59161pt too high) detected at line 118
+Overfull \vbox (61.59161pt too high) detected at line 122
  []
 
 Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
@@ -1276,12 +1282,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 118.
+(epstopdf)             \includegraphics on input line 122.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 118.
+ 122.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1291,12 +1297,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 118.
+(epstopdf)             \includegraphics on input line 122.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 118.
+e 122.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1314,12 +1320,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 133.
+(epstopdf)             \includegraphics on input line 139.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 133.
+ 139.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1329,12 +1335,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 133.
+(epstopdf)             \includegraphics on input line 139.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 133.
+e 139.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1344,13 +1350,13 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [6
 
 ]
-<figures/61.png, id=70, 642.4pt x 481.8pt>
+<figures/61.png, id=73, 642.4pt x 481.8pt>
 File: figures/61.png Graphic file (type png)
 <use figures/61.png>
-Package pdftex.def Info: figures/61.png  used on input line 147.
+Package pdftex.def Info: figures/61.png  used on input line 153.
 (pdftex.def)             Requested size: 185.01605pt x 138.7627pt.
 
-Overfull \vbox (85.84206pt too high) detected at line 147
+Overfull \vbox (85.84206pt too high) detected at line 153
  []
 
 Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
@@ -1361,12 +1367,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 153.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 147.
+ 153.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1376,12 +1382,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 153.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 147.
+e 153.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1391,18 +1397,18 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [7
 
  <./figures/61.png (PNG copy)>]
-<figures/621.png, id=77, 642.4pt x 481.8pt>
+<figures/621.png, id=80, 642.4pt x 481.8pt>
 File: figures/621.png Graphic file (type png)
 <use figures/621.png>
-Package pdftex.def Info: figures/621.png  used on input line 157.
+Package pdftex.def Info: figures/621.png  used on input line 163.
 (pdftex.def)             Requested size: 136.6273pt x 102.46751pt.
-<figures/622.png, id=78, 642.4pt x 481.8pt>
+<figures/622.png, id=81, 642.4pt x 481.8pt>
 File: figures/622.png Graphic file (type png)
 <use figures/622.png>
-Package pdftex.def Info: figures/622.png  used on input line 157.
+Package pdftex.def Info: figures/622.png  used on input line 163.
 (pdftex.def)             Requested size: 136.6273pt x 102.46751pt.
 
-Overfull \vbox (14.60938pt too high) detected at line 157
+Overfull \vbox (14.60938pt too high) detected at line 163
  []
 
 Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
@@ -1413,12 +1419,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 157.
+(epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 157.
+ 163.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1428,12 +1434,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 157.
+(epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 157.
+e 163.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1451,12 +1457,12 @@ Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    size: 23788 bytes
 (epstopdf)             Command: <repstopdf --outfile=kth_cmyk_logo-eps-converte
 d-to.pdf kth_cmyk_logo.eps>
-(epstopdf)             \includegraphics on input line 161.
+(epstopdf)             \includegraphics on input line 167.
 Package epstopdf Info: Output file is already uptodate.
 File: kth_cmyk_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use kth_cmyk_logo-eps-converted-to.pdf>
 Package pdftex.def Info: kth_cmyk_logo-eps-converted-to.pdf  used on input line
- 161.
+ 167.
 (pdftex.def)             Requested size: 25.60747pt x 25.60736pt.
 Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
@@ -1466,12 +1472,12 @@ Package epstopdf Info: Source file: <KTHplatta_CMYK.eps>
 (epstopdf)                    size: 6147 bytes
 (epstopdf)             Command: <repstopdf --outfile=KTHplatta_CMYK-eps-convert
 ed-to.pdf KTHplatta_CMYK.eps>
-(epstopdf)             \includegraphics on input line 161.
+(epstopdf)             \includegraphics on input line 167.
 Package epstopdf Info: Output file is already uptodate.
 File: KTHplatta_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use KTHplatta_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: KTHplatta_CMYK-eps-converted-to.pdf  used on input lin
-e 161.
+e 167.
 (pdftex.def)             Requested size: 546.29303pt x 31.88792pt.
 
 Overfull \hbox (327.7736pt too wide) has occurred while \output is active
@@ -1490,19 +1496,19 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 \tf@snm=\write9
 \openout9 = `KTHPresentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (./KTHPresentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 163.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
 Package rerunfilecheck Info: File `KTHPresentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21069 strings out of 492649
- 406808 string characters out of 6129127
- 590719 words of memory out of 5000000
- 24420 multiletter control sequences out of 15000+600000
+ 21075 strings out of 492649
+ 406906 string characters out of 6129127
+ 590716 words of memory out of 5000000
+ 24425 multiletter control sequences out of 15000+600000
  45886 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,28n,71p,782b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1516,10 +1522,10 @@ exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/think
 Pad/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/thinkPad/te
 xlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/thinkPad/texlive/
 2018/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on KTHPresentation.pdf (9 pages, 265995 bytes).
+Output written on KTHPresentation.pdf (9 pages, 277349 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  19 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
