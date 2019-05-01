@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.9.13)  30 APR 2019 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.9.13)  1 MAY 2019 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1171,51 +1171,6 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [2
 
  <./figures/51.png (PNG copy)> <./KTHplatta_CMYK-eps-converted-to.pdf>]
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87 \end{frame}
-                
-? 
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87 \end{frame}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.87 \end{frame}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.87 \end{frame}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.87 \end{frame}
-                
-? 
-! Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.87 \end{frame}
-                
-? 
-
 Overfull \vbox (29.2794pt too high) detected at line 87
  []
 
@@ -1257,7 +1212,7 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [3
 
 ]
-<figures/53.png, id=48, 642.4pt x 481.8pt>
+<figures/53.png, id=50, 642.4pt x 481.8pt>
 File: figures/53.png Graphic file (type png)
 <use figures/53.png>
 Package pdftex.def Info: figures/53.png  used on input line 106.
@@ -1351,9 +1306,6 @@ Overfull \hbox (327.7736pt too wide) has occurred while \output is active
 [5
 
  <./figures/54.png (PNG copy)>]
-Overfull \vbox (1.64679pt too high) detected at line 133
- []
-
 Package epstopdf Info: Source file: <kth_cmyk_logo.eps>
 (epstopdf)                    date: 2018-09-15 15:04:54
 (epstopdf)                    size: 190451 bytes
@@ -1549,7 +1501,7 @@ Package rerunfilecheck Info: File `KTHPresentation.out' has not changed.
 Here is how much of TeX's memory you used:
  21069 strings out of 492649
  406808 string characters out of 6129127
- 590704 words of memory out of 5000000
+ 590719 words of memory out of 5000000
  24420 multiletter control sequences out of 15000+600000
  45886 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1564,7 +1516,7 @@ exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/think
 Pad/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/thinkPad/te
 xlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/thinkPad/texlive/
 2018/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on KTHPresentation.pdf (9 pages, 265872 bytes).
+Output written on KTHPresentation.pdf (9 pages, 265995 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream

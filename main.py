@@ -158,7 +158,7 @@ def maintask(task):
     if task == '6.1':
         print('HMM posteriors')
         print('each time step sum along state axis', np.sum(np.exp(lgamma), axis=1)) #=1
-        print('each state sum along time axis', np.sum(np.exp(lgamma), axis=0))
+        print('each state sum along time axis', np.sum(np.exp(lgamma)/71, axis=0))
         print('sum over both states and time steps',
               np.sum(np.sum(np.exp(lgamma))))  # =length of obs sequence/time steps
         print('length of observation sequence', lalpha.shape[0])

@@ -74,14 +74,14 @@ trained on one speaker: 34/44\\
 
 trained on all speakers: 44/44
 
-trained on one speaker: 34/44 (same mistakes as ML)
+trained on one speaker: 34/44 (same mistakes as ML)\\
 
 
-\item Computational complexity
+		\item Computational complexity
 
-Viterbi scoring: \mathcal{O}(n)
+Viterbi scoring: $\mathcal{O}(n^2T)$ 
 
-Forward scoring: \mathcal{O}(n^2)
+Forward scoring: $\mathcal{O}(n^2T)$\\
 
 	\end{itemize}
 \end{frame}
@@ -122,7 +122,7 @@ Forward scoring: \mathcal{O}(n^2)
 	\begin{itemize}
 		\item HMM posteriors: $\gamma_n(i) = P(z_n = s_i \mid X, \theta)$
 		
-		For each time step the state posteriors sum to 1 (in linear domain).\\
+		Summing along state: 1 (in linear domain).\\
 
 		Summing along the time axis: 1.35, 2.10, 3.56, 9.74, 10.12, 20.53, 13.00, 1.21, 9.40\\
 		
